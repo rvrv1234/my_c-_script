@@ -6,6 +6,17 @@ int add(int num1, int num2) {    //adding two numbers
     return num1 + num2;
 }
 
+// Function to validate user input (ensure it is a number)
+bool get_input(int& num) {
+    cin >> num;
+    if (cin.fail()) {  
+        cin.clear();  
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignore invalid input
+        return false;  // Return false for invalid input
+    }
+    return true;  // Return true for valid input
+}
+
 int main() {
     int a, b;
 
